@@ -5,6 +5,16 @@ body{
     text-align: center;
 }
 
+.select{
+    outline: none ;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin: 20px auto;
+}
+
 input[type="text"],input[type="password"]{
     outline: none ;
     padding: 20px;
@@ -55,3 +65,17 @@ header a{
 
 }
 
+.head{
+    border-bottom: 2px solid rgb(44, 41, 41);
+    /*padding: 20px;*/
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.esti{
+    background-size: cover;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+
+}

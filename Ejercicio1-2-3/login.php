@@ -2,7 +2,7 @@
 session_start();
     require 'database.php';
     if (!empty($_POST['ci'])&&!empty($_POST['password'])) {
-        $r= $conn->prepare('SELECT ci, clave from usuario where ci=:car');
+        $r= $conn->prepare('SELECT ci, clave, color from usuario where ci=:car');
         $r->bindParam(':car', $_POST['ci']);
         $r->execute();
 
@@ -11,6 +11,7 @@ session_start();
 
         if(count($resultado)>0 && $_POST['password']== $resultado['clave']){
            $_SESSION['user_id']=$resultado['ci'];
+           $_SESSION['color']=$resultado['color'];
            
             header('location: /academico/sesion.php');
         }else{

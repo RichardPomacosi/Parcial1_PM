@@ -16,11 +16,14 @@
         }else{
             $message='Se produjo un error al registrar';
         }
-        $sql="INSERT INTO usuario (ci,clave) values  (:ci, :password)";
+        $sql="INSERT INTO usuario (ci,clave,color) values  (:ci, :password, :col)";
         $st=$conn->prepare($sql);
         //$password=password_hash($_POST['password'],PASSWORD_BCRYPT);
         $st->bindParam(':ci',$_POST['ci']);
         $st->bindParam(':password',$_POST['password']);
+        $st->bindParam(':col',$_POST['color']);
+      
+
         if($st->execute()){
             $message='Se registro un campo';
         }else{
@@ -46,12 +49,20 @@
     <span><a href="login.php">Login </a></span>
     
     <form action="registrarse.php" method="post">
+    <select name="color" class="select">
+					<option disabled="">Selecciona un color</option>
+					<option value="#c70039">Rojo</option>
+					<option value="#ffc305">Amarillo</option>
+                    <option value="#8b4513">Cafe</option>
+                    <option value="#ff00ff">Lila</option>
+		</select>
         <input type="text" name="ci" placeholder="Carnet de identidad">
         <input type="text" name="nombre" placeholder="Nombre">
         <input type="text" name="paterno" placeholder="Apellido Paterno">
         <input type="text" name="materno" placeholder="Apellido Materno">
         <input type="text" name="residencia" placeholder="Residencia">
         <input type="password" name="password" placeholder="Contraseña">
+        
         <input type="submit" values="Registrar">
 
     </form>

@@ -6,7 +6,7 @@
 
 select 
 sum(case when identificador.residencia='01' and inscrito.nota>50 then 1 else 0 end) Chiquisaca,
-sum(case when identificador.residencia ='02' and inscrito.nota>50then 1 else 0 end) La_paz,
+sum(case when identificador.residencia ='02' and inscrito.nota>50 then 1 else 0 end) La_paz,
 sum(case when identificador.residencia ='03' and inscrito.nota>50 then 1 else 0 end) Cochabamba,
 sum(case when identificador.residencia ='04' and inscrito.nota>50 then 1 else 0 end) Oruro,
 sum(case when identificador.residencia='05' and inscrito.nota>50 then 1 else 0 end) Potosi,

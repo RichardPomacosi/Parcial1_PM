@@ -26,10 +26,15 @@
 <body>
 
 <?php require 'header.php'?>
+<header class="head" style="background-color: <?php echo $_SESSION['color']?> ">
+    <div class="esti">
+    <a href="/academico">Buen Dia </a>
 
+    </div>
+</header>
     <?php if(!empty($user)):?>
         <br>Bienvenido  <?= $user['nombre']?>
-        <br>
+        <br><br><br><br><br><br>
         <a href="logout.php">Logout</a>
     <?php else: ?>
 
